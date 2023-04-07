@@ -12,18 +12,24 @@ fun SetupNavGraph(
 ) {
     NavHost(
         navController = navController ,
-        startDestination = Screen.Principal.route
+        startDestination = Screen.Inicio.route
         ) {
         composable(
-            route = Screen.Principal.route
+            route = Screen.Inicio.route
         ) {
             pantalla_inicio(navController)
+        }
+        composable(
+            route = Screen.DatosIniciales.route
+        ) {
+            pantalla_datos_iniciales(navController)
         }
         composable(
             route = Screen.CargaDatos.route
         ) {
             pantalla_datos()
         }
+
     }
     
 }

@@ -4,12 +4,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 
 
 @Composable
-fun pantalla_inicio(
+fun pantalla_datos_iniciales(
     navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
