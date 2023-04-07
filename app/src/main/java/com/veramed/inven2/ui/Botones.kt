@@ -5,7 +5,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.Camera
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
@@ -26,6 +26,6 @@ fun BotonEscanear(){
     IconButton(
         onClick = { }
     ) {
-        Icon(Icons.Rounded.Add,contentDescription = "Scanear con la cámara" )
+        Icon(Icons.Rounded.Camera,contentDescription = "Scanear con la cámara" )
     }
 }
