@@ -1,6 +1,7 @@
 package com.veramed.inven2.ui
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -46,6 +47,8 @@ fun BotonEscanear(){
         mutableStateOf<Uri?>(null)
     }
 
+    var bitmap:Bitmap
+
 
     val imagePicker = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
@@ -55,10 +58,17 @@ fun BotonEscanear(){
         }
     )
 
-    val cameraLauncher = rememberLauncherForActivityResult(
+    /*val cameraLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.TakePicture(),
         onResult = { success ->
             hasImage = success
+        }
+    )*/
+
+    val cameraLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.TakePicturePreview(),
+        onResult = { success ->
+           //bitmap = success
         }
     )
 
@@ -66,9 +76,11 @@ fun BotonEscanear(){
     IconButton(
         onClick = {
             val uri =  ComposeFileProvider.getImageUri(mContext)
-            imageUri = uri
-            cameraLauncher.launch(uri)
 
+
+            imageUri = uri
+            //cameraLauncher.launch(uri)
+            //bitmap = cameraLauncher.launch()
             imageAnalyzer(mContext,uri)
 
         }
