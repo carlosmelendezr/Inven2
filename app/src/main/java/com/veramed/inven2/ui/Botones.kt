@@ -23,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import com.veramed.inven2.ComposeFileProvider
 import com.veramed.util.getCamImageUri
+import com.veramed.util.imageAnalyzer
 
 
 @Composable
@@ -67,6 +68,9 @@ fun BotonEscanear(){
             val uri =  ComposeFileProvider.getImageUri(mContext)
             imageUri = uri
             cameraLauncher.launch(uri)
+
+            imageAnalyzer(mContext,uri)
+
         }
     ) {
         Icon(Icons.Rounded.Camera,contentDescription = "Scanear con la cámara" )
